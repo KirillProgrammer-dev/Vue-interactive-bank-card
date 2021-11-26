@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CardChecker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div class="card" id="app">
+
+        <!-- Здесь будет выводиться ЛОГОТИП БАНКА -->
+        <div class="bank">
+            <img :src="'img/banks/'+ returnBankLogo + '.png'" onerror="this.src=''">
+        </div>
+
+        <!-- Поле для ввода НОМЕРА КАРТЫ -->
+        <div class="number-container">
+            <input style="outline: none;" v-model="cartNumber" type="text" placeholder="Номер карты" :class="returnInputClass">
+            <div :class="returnStatusClass"></div>
+        </div>
+
+        <!-- Поле для ввода ИМЕНИ ДЕРЖАТЕЛЯ -->
+        <div class="name-container">
+            <input style="outline: none;" v-model="name" type="text" placeholder="Имя держателя" :class="returnNameInput">
+            <div :class="returnNameStatus"></div>
+        </div>
+
+        <!-- Логотип ПЛАТЕЖНОЙ СИСТЕМЫ -->
+        <div class="pay-system">
+            <img :src="('img/systems/' + returnBank +'.png')" onerror="this.src=''">
+        </div>
+
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                cartNumber: '',
+                name: '',
+            },
+            computed: {
+                returnBank() {
+                    const first_n = this.cartNumber.split('')[0];
+                    if (first_n == 2) {
+                        return 'mir';
+                    } else if (first_n == 3) {
+                        return 'american-exp';
+                    } else if (first_n == 4) {
+                        return 'visa'
+                    } else if (first_n == 5) {
+                        return 'mastercard';
+                    } else if (first_n == 6) {
+                        return 'maestro';
+                    }
+                },
+                returnInputClass() {
+                    return this.cartNumber.length == 16 ? 'input-ok input' : 'input input-err'
+                },
+                returnStatusClass() {
+                    return this.cartNumber.length == 16 ? 'status-ok status' : 'status status-err'
+                },
+                returnBankLogo() {
+                    const firsts_n = this.cartNumber.substr(0, 6);
+                    const alpha = ['521178', '548673', '548601', '415428', '676371', '477964', '479004'];
+                    const vtb = ['427229', '527883', '447520'];
+                    const gasprom = ['548999', '526483'];
+                    const mts = ['533736', '540616'];
+                    const otkr = ['434146', '405870', '544573', '532301'];
+                    const rosbank = ['440503', '554761'];
+                    const russtand = ['513691', '510047'];
+                    const raifasen = ['462730', '462729'];
+                    const sber = ['427683', '427901', '427644', '427601', '427901', '427631', '427638', '546938'];
+                    const tinkoff = ['521324', '437773'];
+                    if (firsts_n) {
+                        if (alpha.indexOf(firsts_n) != -1) {
+                            return 'alpha';
+                        } else if (otkr.indexOf(firsts_n) != -1) {
+                            return 'otkrytie';
+                        } else if (vtb.indexOf(firsts_n) != -1) {
+                            return 'vtb'
+                        } else if (gasprom.indexOf(firsts_n) != -1) {
+                            return 'gazprombank';
+                        } else if (mts.indexOf(firsts_n) != -1) {
+                            return 'mts-bank';
+                        } else if (rosbank.indexOf(firsts_n) != -1) {
+                            return 'rosbank';
+                        } else if (russtand.indexOf(firsts_n) != -1) {
+                            return 'russian_standart';
+                        } else if (raifasen.indexOf(firsts_n) != -1) {
+                            return 'raiffaizen';
+                        } else if (sber.indexOf(firsts_n) != -1) {
+                            return 'sberbank';
+                        } else if (tinkoff.indexOf(firsts_n) != -1) {
+                            return 'tinkoff';
+                        }
+                    }
+                },
+                returnNameInput() {
+                    const pattern = /[^A-Za-z\s]/;
+                    const name = this.name;
+                    if (!pattern.test(name) && name != '') {
+                        str_l = name.split('');
+                        for (let i = name.length; i <= 0; i--) {
+                            if (i % 2 == 0) {
+                                if (name[i].split('') * 2 <= 9) {
+                                    str[i] = name[i].split('') * 2;
+                                } else {
+                                    let array = (name[i].split('') * 2).split("").map(Number);
+                                    let sum = 0;
+                                    for (i = 0; i < array.length; i++) {
+                                        sum += array[i];
+                                    }
+                                    str[i] = sum;
+                                }
+                            }
+                        }
+                        array = (name[i].split('') * 2).split("").map(Number);
+                        let sum = 0;
+                        for (i = 0; i < array.length; i++) {
+                            sum += array[i];
+                        }
+                        if (sum % 10 == 0) {
+                            return 'input-ok input';
+                        } else {
+                            return 'input input-err'
+                        }
+                    } else {
+                        return 'input input-err';
+                    }
+
+                },
+                returnNameStatus() {
+                    const pattern = /[^A-Za-z\s]/;
+                    const name = this.name;
+                    if (!pattern.test(name) && name != '') {
+                        return 'status-ok status';
+                    } else {
+                        return 'status status-err';
+                    }
+                },
+            },
+        })
+    </script>
+</body>
+
+</html>
