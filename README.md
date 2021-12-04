@@ -1,8 +1,10 @@
 # Vue-interactive-bank-card
 <style>
-    display: flex;
-    align-items: center;
-    flex-direction: row;
+    li {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+    }
 </style>
 <h1>Проверка банковской карты на Vue.js 3</h1>
 <p>
