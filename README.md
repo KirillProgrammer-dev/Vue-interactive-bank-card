@@ -11,15 +11,15 @@
     </ul>
     И 10 банков
     <ul>
-        <li style=" display: flex;align-items: center;flex-direction: row;" >Альфа банк <img width="7%" src="img/banks/alpha.png"> </li>
-        <li style=" display: flex;align-items: center;flex-direction: row;" >Газпром банк <img width="7%" src="img/banks/gazprombank.png"> </li>
-        <li style=" display: flex;align-items: center;flex-direction: row;" >Мтс банк <img width="7%" src="img/banks/mts.png"> </li>
-        <li style=" display: flex;align-items: center;flex-direction: row;" >Банк Открытие <img width="7%" src="img/banks/otkrytie.png"> </li>
-        <li style=" display: flex;align-items: center;flex-direction: row;" >Райфайзен банк <img width="7%" src="img/banks/raiffaizen.png"> </li>
-        <li style=" display: flex;align-items: center;flex-direction: row;" >Росбанк банк <img width="7%" src="img/banks/rosbank.png"> </li>
-        <li style=" display: flex;align-items: center;flex-direction: row;" >Банк Русский стандарт<img width="7%" src="img/banks/russian_standart.png"> </li>
-        <li style=" display: flex;align-items: center;flex-direction: row;" >Сбербанк<img width="7%" src="img/banks/sberbank.png"> </li>
-        <li style=" display: flex;align-items: center;flex-direction: row;" >Втб банк <img width="7%" src="img/banks/vtb.png"> </li>
-        <li style=" display: flex;align-items: center;flex-direction: row;" >Тинькофф банк <img width="7%" src="img/banks/tinkoff.png"> </li>
+        <li style=" display: flex;align-items: center;flex-direction: row;" >Альфа банк <img width="5%" src="img/banks/alpha.png"> </li>
+        <li style=" display: flex;align-items: center;flex-direction: row;" >Газпром банк <img width="5%" src="img/banks/gazprombank.png"> </li>
+        <li style=" display: flex;align-items: center;flex-direction: row;" >Мтс банк <img width="5%" src="img/banks/mts-bank.png"> </li>
+        <li style=" display: flex;align-items: center;flex-direction: row;" >Банк Открытие <img width="5%" src="img/banks/otkrytie.png"> </li>
+        <li style=" display: flex;align-items: center;flex-direction: row;" >Райфайзен банк <img width="5%" src="img/banks/raiffaizen.png"> </li>
+        <li style=" display: flex;align-items: center;flex-direction: row;" >Росбанк банк <img width="5%" src="img/banks/rosbank.png"> </li>
+        <li style=" display: flex;align-items: center;flex-direction: row;" >Банк Русский стандарт<img width="5%" src="img/banks/russian_standart.png"> </li>
+        <li style=" display: flex;align-items: center;flex-direction: row;" >Сбербанк<img width="5%" src="img/banks/sberbank.png"> </li>
+        <li style=" display: flex;align-items: center;flex-direction: row;" >Втб банк <img width="5%" src="img/banks/vtb.png"> </li>
+        <li style=" display: flex;align-items: center;flex-direction: row;" >Тинькофф банк <img width="5%" src="img/banks/tinkoff.png"> </li>
     </ul>
 </p>
